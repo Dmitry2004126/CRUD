@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Swimmer</title>
+</head>
+<body>
+<p th:text="${swimmer.getId()}">value</p>
+<p th:text="${swimmer.getName()}">value</p>
+<form th:action="@{/swimmers/{id}/edit(id=${swimmer.getId()})}">
+  <input type="submit" value="edit" />
+</form>
+<form th:method="POST" th:action="@{/swimmers/{id}(id=${swimmer.getId()})}">
+  <input type="submit" value="delete" />
+</form>
+<form action="/swimmers">
+  <input type="submit" value="back" />
+</form>
+</body>
+</html>

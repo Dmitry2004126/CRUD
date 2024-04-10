@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<form  th:action="@{/swimmers/{id}(id=${swimmer.getId()})}" th:object="${swimmer}" th:method="POST" >
+    <label for="name">Name:</label>
+    <input type="text" th:field="*{name}" id="name">
+    <br>
+    <label for="gender">Gender:</label>
+    <input type="text" th:field="*{gender}" id="gender">
+    <br>
+    <label for="age">Age:</label>
+    <input type="number" th:field="*{age}" id="age">
+    <br>
+    <label for="distance">Distance:</label>
+    <input type="number" th:field="*{distance}" id="distance">
+    <br>
+    <label for="style">Style:</label>
+    <input type="text" th:field="*{style}" id="style">
+    <br>
+    <label for="time">Time:</label>
+    <input type="number" th:field="*{time}" id="time">
+    <br>
+    <input type="submit" value="edit">
+
+</form>
+<form action="/swimmers">
+    <input type="submit" value="Back" />
+</form>
+</body>
+</html>

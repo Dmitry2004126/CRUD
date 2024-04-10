@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Swimmers</h1>
+<table cellspacing="0" style="text-align: center border:black">
+    <tr>
+        <td><p> Name </p>
+        <td><p>Gender </p>
+        <td><p>Age </p>
+        <td><p>Distance </p>
+        <td><p>Style </p>
+        <td><p>Time </p>
+    </tr>
+    <tr th:each="swimmer: ${swimmers}">
+        <td  style="border: solid black"><a th:href="@{/swimmers/{id}(id=${swimmer.getId()})}" th:text="${swimmer.name}">swimmer</a></td>
+        <td style="border: solid black"><a th:href="@{/swimmers/{id}(id=${swimmer.getId()})}"th:text="${swimmer.gender}">swimmer</a></td>
+        <td style="border: solid black"><a th:href="@{/swimmers/{id}(id=${swimmer.getId()})}"th:text="${swimmer.age}">swimmer</a></td>
+        <td style="border: solid black"><a th:href="@{/swimmers/{id}(id=${swimmer.getId()})}"th:text="${swimmer.distance}">swimmer</a></td>
+        <td style="border: solid black"><a th:href="@{/swimmers/{id}(id=${swimmer.getId()})}"th:text="${swimmer.style}">swimmer</a></td>
+        <td style="border: solid black"><a th:href="@{/swimmers/{id}(id=${swimmer.getId()})}"th:text="${swimmer.time}">swimmer</a></td>
+    </tr>
+</table>
+<form th:action="@{/swimmers/new}">
+    <input type="submit" value="Add a new swimmer" />
+</form>
+</body>
+</html>
